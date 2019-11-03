@@ -480,7 +480,7 @@
     bottom: calc(var(--size) * 0.1);
     right: calc(var(--size) / 5);
     clip-path: ellipse(100% 81% at 0% 97%);
-    -webkit-clip-path: polygon(0 0, 100% 100%, 45% 100%, 0 20%);
+    -webkit-clip-path: ellipse(100% 81% at 0% 97%);
     border-radius: 10%;
 }
 
