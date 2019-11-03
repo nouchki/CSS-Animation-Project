@@ -398,6 +398,7 @@
     left: calc(var(--size) * 6 - (var(--size) / 7));
     z-index: 100;
     clip-path: polygon(0 0, 100% 100%, 45% 100%, 0 20%);
+    -webkit-clip-path: polygon(0 0, 100% 100%, 45% 100%, 0 20%);
     opacity: 0.9;
 
     animation-name : light-flashing;
@@ -435,6 +436,7 @@
     width: calc(var(--size) * 4);
     height: var(--size);
     clip-path: ellipse(55% 100% at 48% 86%);
+    -webkit-clip-path: ellipse(55% 100% at 48% 86%);
     background: #0d031f;
     margin-top: calc(var(--size) - 10px);
     z-index: 10;
@@ -448,6 +450,7 @@
     top: calc(50% - var(--size));
     left: calc(40% - var(--size));
     clip-path: ellipse(50% 100% at 50% 100%);
+    -webkit-clip-path: ellipse(50% 100% at 50% 100%);
     width: calc(var(--size) * 2.5);
     height: var(--size);
     background: #0d031f;
@@ -463,6 +466,7 @@
     left: calc(var(--size) / 6);
     bottom: calc(var(--size) * 0.1);
     clip-path: ellipse(98% 61% at 100% 100%);
+    -webkit-clip-path: ellipse(98% 61% at 100% 100%);
     border-radius: 10%;
 }
 
@@ -476,6 +480,7 @@
     bottom: calc(var(--size) * 0.1);
     right: calc(var(--size) / 5);
     clip-path: ellipse(100% 81% at 0% 97%);
+    -webkit-clip-path: polygon(0 0, 100% 100%, 45% 100%, 0 20%);
     border-radius: 10%;
 }
 
@@ -948,6 +953,4 @@
         width:25px;
          height:4px;
      }
-
-
  }
