@@ -1,4 +1,5 @@
-.sunset {
+.sunset
+{
     position: absolute;
     top: 0;
     left: 0;
@@ -13,7 +14,8 @@
     animation-iteration-count:infinite;
 }
 
-@keyframes changing-sky {
+@keyframes changing-sky
+{
     0%   {background: #041434; } /*night*/
     30%  {background: #041434;}
     39%  {background: #021B4D}
@@ -29,7 +31,8 @@
     100% {background: #041434;} 
 }
 
-.sunset .circle{
+.sunset .circle
+{
     position: absolute;
     margin: auto;
     top: 100%;
@@ -42,7 +45,8 @@
     transform:translateZ(2px);
 }
 
-.sunset .circle .sun{
+.sunset .circle .sun
+{
     position: absolute;
     margin: auto;
     top: 72%;
@@ -56,7 +60,8 @@
     background:radial-gradient(#F5E688,#F8EFBA);
 }
 
-.sunset .sun-axis{
+.sunset .sun-axis
+{
     animation-name:turning-sun-animation;
     animation-duration:25s;
     animation-iteration-count:infinite;
@@ -65,12 +70,14 @@
     transform:translateZ(2px);
 }
 
-@keyframes turning-sun-animation{
+@keyframes turning-sun-animation
+{
     0%   {transform:rotate(0deg);}
     100% {transform:rotate(360deg);}
 }
 
-.sunset .circle .moon{
+.sunset .circle .moon
+{
     position: absolute;
     margin: auto;
     top: 72%;
@@ -84,7 +91,8 @@
     background:radial-gradient(#c7ecee,#dff9fb);
 }
 
-.sunset .moon-axis{
+.sunset .moon-axis
+{
     animation-name:turning-moon-animation;
     animation-duration:25s;
     animation-iteration-count:infinite;
@@ -94,7 +102,8 @@
     animation-fill-mode: both;
 }
 
-@keyframes turning-moon-animation{
+@keyframes turning-moon-animation
+{
     0%   {transform:rotate(-180deg);}
     100% {transform:rotate(180deg);}
 }
@@ -660,7 +669,7 @@
     border-radius: 30px;
 }
 
-.big-building, .small-building
+.sunset .buildings .big-building, .small-building
 {
     animation-name: day-night-buildings-color;
     animation-duration:25s;
@@ -791,7 +800,7 @@
 
 /*Road lines*/
 
- .road-lines-container
+.sunset .road .road-lines-container
  {
     position: absolute;
     top: 0;
@@ -814,7 +823,7 @@
     100% {transform: translateX(-140px) translateZ(30px);}
 }
 
- .road-line
+.sunset .road .road-lines-container .road-line
  {
     position: absolute;
     top: 20%;
@@ -842,53 +851,104 @@
     100%{background:#ffdd59;}
 }
 
- .road-line-2
+.sunset .road .road-lines-container .road-line-2
  {
      left: 150px;
  }
 
- .road-line-3
+.sunset .road .road-lines-container .road-line-3
  {
      left: 300px;
  }
 
- .road-line-4
+.sunset .road .road-lines-container .road-line-4
  {
      left: 450px;
  }
 
- .road-line-5
+.sunset .road .road-lines-container .road-line-5
  {
      left: 600px;
  }
 
- .road-line-6
+.sunset .road .road-lines-container .road-line-6
  {
      left: 750px;
  }
 
- .road-line-7
+.sunset .road .road-lines-container .road-line-7
  {
      left: 900px;
  }
 
- .road-line-8
+.sunset .road .road-lines-container .road-line-8
  {
      left: 1050px;
  }
 
- .road-line-9
+.sunset .road .road-lines-container .road-line-9
  {
      left: 1200px;
  }
 
- .road-line-10
+.sunset .road .road-lines-container .road-line-10
  {
      left: 1350px;
  }
 
 
- .road-line-11
+.sunset .road .road-lines-container .road-line-11
  {
      left: 1500px;
+ }
+
+
+ @media screen and (max-width:1024px)
+ {
+     .sunset{
+         --size: 35px;
+     }
+
+     .sunset .buildings{
+         --secondsize:80px;
+         width:50%;
+     }
+
+     .sunset .car-container{
+         top:calc(var(--size)*16);
+         left:var(--size);
+     }
+
+    .sunset .buildings .big-building .window,
+    .sunset .buildings .big-building .window::after{
+        width: calc(var(--size) / 1);
+        height: calc(var(--size) / 1);
+    }
+
+    .sunset .buildings .small-building .window,
+    .sunset .buildings .small-building .window::after{
+        width:calc(var(--size) / 1.5);
+    height:calc(var(--size) / 1.5)
+    }
+
+    .sunset .buildings .big-building .window-3{
+        top:250px;
+     }
+
+    .sunset .buildings .small-building .window-3{
+        top:150px;
+     }
+
+     .sunset .cloud{
+        width: 30%;
+     }
+
+     .sunset .road .road-lines-container .road-line
+     {
+        top:40%; 
+        width:25px;
+         height:4px;
+     }
+
+
  }
