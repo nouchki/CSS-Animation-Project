@@ -1,0 +1,894 @@
+.sunset {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    --size: 70px; 
+    overflow:hidden;
+    transform:translateZ(0px);
+
+    animation-name:changing-sky;
+    animation-duration: 25s;
+    animation-iteration-count:infinite;
+}
+
+@keyframes changing-sky {
+    0%   {background: #041434; } /*night*/
+    30%  {background: #041434;}
+    39%  {background: #021B4D}
+    42%  {background: #5C7DBE;}
+    45%  { background:#FCFCC4;}/*day*/
+    48%  {background: #02ABCE; } 
+    68%  {background: #02ABCE; } 
+    73%  {background :#ffe577;}
+    71%  {background :#ff8967;}
+    73%  {background: #fd6051;} 
+    74%  {background: #392033;} /*night*/
+    75%  {background: #041434;} 
+    100% {background: #041434;} 
+}
+
+.sunset .circle{
+    position: absolute;
+    margin: auto;
+    top: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 1200px;
+    height: 1200px;
+    border-radius: 50%;
+    transform:translateZ(2px);
+}
+
+.sunset .circle .sun{
+    position: absolute;
+    margin: auto;
+    top: 72%;
+    left: 72%;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 52px 2px #F59717;
+    background:radial-gradient(#F5E688,#F8EFBA);
+}
+
+.sunset .sun-axis{
+    animation-name:turning-sun-animation;
+    animation-duration:25s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease-in-out;
+    will-change: transform;
+    transform:translateZ(2px);
+}
+
+@keyframes turning-sun-animation{
+    0%   {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+
+.sunset .circle .moon{
+    position: absolute;
+    margin: auto;
+    top: 72%;
+    left: 72%;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 52px 2px #fff;
+    background:radial-gradient(#c7ecee,#dff9fb);
+}
+
+.sunset .moon-axis{
+    animation-name:turning-moon-animation;
+    animation-duration:25s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease-in-out;
+    will-change: transform;
+    transform:translateZ(2px);
+    animation-fill-mode: both;
+}
+
+@keyframes turning-moon-animation{
+    0%   {transform:rotate(-180deg);}
+    100% {transform:rotate(180deg);}
+}
+
+.cloud
+{
+    position: absolute;
+    top: 10%;
+    bottom: 0;
+    right: 0;
+    left: 10%;
+    width: 15%;
+    height: 10%;
+    border-radius: 50%;
+    background: #eee;
+    opacity:70%;
+    transform:translateZ(3px);
+    z-index:104;
+
+    animation-name: moving-clouds;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moving-clouds
+{
+    0%   {transform: translate(0%,0%);}
+    25%  {transform:translate(5%,5%);}
+    40%  {transform:translate(5%,-5%);}
+    60%  {transform:translate(-5%,5%);}
+    75%  {transform:translate(-5%,-5%)}
+    100% {transform: translate(0%,0%);}
+}
+
+.cloud::after
+{
+    content: "";
+    position: absolute;
+    top: 25%;
+    bottom: 0;
+    right: 0;
+    left: 90px;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: #eee;
+    opacity:70%;
+}
+
+.cloud::before
+{
+    content: "";
+    position: absolute;
+    top: 15%;
+    bottom: 0;
+    right: 0;
+    left: -30px;
+    width: 80%;
+    height: 75%;
+    border-radius: 50%;
+    background: #eee;
+    opacity:70%;
+}
+
+.cloud-2
+{
+    top: 40%;
+    left: 75%;
+}
+
+.sunset .stars-container
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - var(--size)*2) ;
+    animation-name: stars-apparition;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    transform:translateZ(1px);
+
+}
+
+@keyframes stars-apparition
+{
+    0%  {opacity:0.9;}
+    26% {opacity:0.9;}
+    39% {opacity:0;}
+    82% {opacity:0;}
+    83% {opacity:0.9;}
+  
+    100%{opacity:0.9;}
+}
+
+.sunset .stars-container .star
+{
+    position: absolute;
+    width: 0.2px;
+    height: 0.2px;
+    transform: translateZ(-10px);
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 1px #fff;
+    background: radial-gradient(#c7ecee,#dff9fb);
+}
+
+.sunset .stars-container .star-1
+{
+    top: 50%;
+    left: 50%;
+}
+
+.sunset .stars-container .star-2
+{
+    top: 49%;
+    left: 51%;
+}
+
+.sunset .stars-container .star-3
+{
+    top: 47%;
+    left: 62%;
+}
+
+.sunset .stars-container .star-4
+{
+    top: 89%;
+    left: 30%;
+}
+
+.sunset .stars-container .star-5
+{
+    top: 20%;
+    left: 80%;
+}
+
+.sunset .stars-container .star-6
+{
+    top: 43%;
+    left: 12%;
+}
+
+.sunset .stars-container .star-7
+{
+    top: 30%;
+    left: 70%;
+}
+
+.sunset .stars-container .star-8
+{
+    top: 54%;
+    left: 44%;
+}
+
+.sunset .stars-container .star-9
+{
+    top: 2%;
+    left: 5%;
+}
+
+.sunset .stars-container .star-10
+{
+    top: 78%;
+    left: 43%;
+}
+
+.sunset .stars-container .star-11
+{
+    top: 23%;
+    left: 81%;
+}
+
+.sunset .stars-container .star-12
+{
+    top: 19%;
+    left: 25%;
+}
+
+.sunset .stars-container .star-13
+{
+    top: 19%;
+    left: 80%;;
+}
+
+.sunset .stars-container .star-14
+{
+    top: 25%;
+    left: 12%;;
+}
+
+.sunset .stars-container .star-15
+{
+    top: 66%;
+    left: 45%;;
+}
+
+.sunset .stars-container .star-16
+{
+    top: 36%;
+    left: 36%;;
+}
+
+.sunset .stars-container .star-17
+{
+    top: 19%;
+    left: 30%;;
+}
+
+.sunset .stars-container .star-18
+{
+    top: 81%;
+    left: 72%;;
+}
+
+.sunset .stars-container .star-19
+{
+    top: 36%;
+    left: 72%;;
+}
+
+.sunset .stars-container .star-19
+{
+    top: 67%;
+    left: 40%;;
+}
+
+.sunset .stars-container .star-20
+{
+    top: 74%;
+    left: 19%;;
+}
+
+.sunset .star::before
+{
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -110px;
+    width: 1px;
+    height: 1px;
+    z-index: 50;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 1px #fff;
+    background:radial-gradient(#c7ecee,#dff9fb);
+}
+
+.sunset .star::after
+{
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 110px;
+    width: 1px;
+    height: 1px;
+    z-index: 50;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px 2px #fff;
+    background:radial-gradient(#c7ecee,#dff9fb);
+}
+
+.sunset .car-container
+{
+    position: absolute;
+    top: calc(50% - var(--size) / 2);
+    left: calc(50% - var(--size) * 9);
+    width: calc(var(--size) * 8);
+    height: calc(var(--size) * 4);
+    z-index: 103;
+
+    animation-name: moving-car;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    transform:translateZ(7px);
+}
+
+@keyframes moving-car
+{
+    0%   {transform: translateY(0px);}
+    50%  {transform: translateY(3px);}
+    100% {transform: translateY(0px);}
+}
+
+
+.sunset .car-container .light-ray
+{
+    position: absolute;
+    width: calc(var(--size) * 4);
+    height: var(--size);
+    background: #fff6d4;
+    top: calc(var(--size) * 2.4);
+    left: calc(var(--size) * 6 - (var(--size) / 7));
+    z-index: 100;
+    clip-path: polygon(0 0, 100% 100%, 45% 100%, 0 20%);
+    opacity: 0.9;
+
+    animation-name : light-flashing;
+    animation-duration: 25s;
+    animation-iteration-count:infinite;
+    animation-timing-function:ease-in-out;
+}
+
+@keyframes light-flashing
+{
+    0%{opacity:0.9;}
+    36%{opacity:0.9;}
+    37%{opacity:0;}
+    38%{opacity:0.9;}
+    39%{opacity:0;}
+    82%{opacity:0;}
+    83%{opacity:0.9;}
+    84%{opacity:0;}
+    87%{opacity:0.9}
+    100%{opacity:0.9;}
+}
+
+.sunset .car-container .car
+{
+    position: absolute;
+    top: calc(50% - var(--size));
+    left: calc(50% - var(--size) * 2);
+    width: calc(var(--size) * 4);
+    height: calc(var(--size) * 2);
+    z-index: 1;
+}
+
+.sunset .car-container .car .lower-part
+{
+    width: calc(var(--size) * 4);
+    height: var(--size);
+    clip-path: ellipse(55% 100% at 48% 86%);
+    background: #0d031f;
+    margin-top: calc(var(--size) - 10px);
+    z-index: 10;
+    border-radius: 20%;
+}
+
+
+.sunset .car-container .car .upper-part
+{
+    position: absolute;
+    top: calc(50% - var(--size));
+    left: calc(40% - var(--size));
+    clip-path: ellipse(50% 100% at 50% 100%);
+    width: calc(var(--size) * 2.5);
+    height: var(--size);
+    background: #0d031f;
+    z-index: 11;
+}
+
+.sunset .car-container .car .upper-part .back-window
+{
+    position: absolute;
+    background:#fff6d4;
+    width: calc(var(--size) * 0.9);
+    height: calc(var(--size) * 1.2);
+    left: calc(var(--size) / 6);
+    bottom: calc(var(--size) * 0.1);
+    clip-path: ellipse(98% 61% at 100% 100%);
+    border-radius: 10%;
+}
+
+.sunset .car-container .car .upper-part .front-window 
+{
+    position: absolute;
+    background:#fff6d4;
+    width: calc(var(--size) * 1.1);
+    height: calc(var(--size) * 0.9);
+    right: calc(var(--size) / 6);
+    bottom: calc(var(--size) * 0.1);
+    right: calc(var(--size) / 5);
+    clip-path: ellipse(100% 81% at 0% 97%);
+    border-radius: 10%;
+}
+
+.sunset .car-container .car .wheel
+{
+    background: #0d031f;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+}
+
+.sunset .car-container .car .left-wheel
+{
+    position: absolute;
+    left: 0;
+    top: calc(var(--size) * 1.5);
+}
+
+.sunset .car-container .car .right-wheel
+{
+    position: absolute;
+    right: 0;
+    top: calc(var(--size) * 1.5);
+}
+
+.sunset .car-container .car .wheel .tire
+{
+    position: absolute;
+    top: calc(50% - (var(--size) * 0.7) / 2);
+    left: calc(50% - (var(--size) * 0.7) / 2);
+    background: #260d55;
+    width: calc(var(--size) * 0.7);
+    height: calc(var(--size) * 0.7);
+    border-radius: 50%;
+}
+
+.sunset .car-container .car .wheel .tire .inner-tire
+{
+    position: absolute;
+    top: calc(50% - (var(--size) * 0.2) / 2);
+    left: calc(50% - (var(--size) * 0.2) / 2);
+    background: #0d031f;
+    width: calc(var(--size) * 0.2);
+    height: calc(var(--size) * 0.2);
+    border-radius: 50%;
+}
+
+.sunset .car-container .car .lower-part .headlight
+{
+    background: #fff6d4;
+    width: calc(var(--size) * 0.2);
+    height: calc(var(--size) * 0.2);
+    border-radius: 50%;
+}
+
+.sunset .car-container .car .lower-part .back-headlight
+{
+    position: absolute;
+    width: calc(var(--size) * 0.1);
+    height: calc(var(--size) * 0.2);
+    left: calc(var(--size) / 12);
+    bottom: calc(var(--size) * 0.4);
+    border-radius: 50%;
+}
+
+.sunset .car-container .car .lower-part .front-headlight
+{
+    position: absolute;
+    width: calc(var(--size) * 0.1);
+    height: calc(var(--size) * 0.2);
+    right: calc(var(--size) / 12);
+    bottom: calc(var(--size) * 0.4);
+    border-radius: 50%;
+}
+
+ .sunset .car-container .car .lower-part, .sunset .car-container .car .upper-part
+ {
+    animation-name: day-night-car-color;
+    animation-duration:25s;
+    animation-iteration-count:infinite;
+}
+
+@keyframes day-night-car-color
+{
+    0%  {background:#0d031f;}
+    39.5% {background:#0d031f;}
+    49% {background:#A32E19;}
+    67% {background:#EF4021;}
+    73%{background:#A32E19;}
+    74%{background:#0d031f;}
+    100%{background:#0d031f;}
+}
+
+.sunset .car-container .car .wheel, .sunset .car-container .car .wheel .tire .inner-tire
+{
+    animation-name: day-night-wheel-color;
+    animation-duration:25s;
+    animation-iteration-count:infinite;
+}
+
+@keyframes day-night-wheel-color
+{
+    0%  {background:#0d031f;}
+    39.5% {background:#0d031f;}
+    49% {background:#2c3e50;}
+    67% {background:#34495e;}
+    73%{background:#2c3e50;}
+    74%{background:#0d031f;}
+    100%{background:#0d031f;}
+}
+
+.sunset .car-container .car .wheel .tire
+{
+    animation-name: day-night-tire-color;
+    animation-duration:25s;
+    animation-iteration-count:infinite;
+}
+
+@keyframes day-night-tire-color
+{
+    0%  {background:#260d55;}
+    39.5% {background:#260d55;}
+    49% {background:#7f8c8d;}
+    67% {background:#95a5a6;}
+    73%{background:#7f8c8d;}
+    74%{background:#260d55;}
+    100%{background:#260d55;}
+}
+
+.sunset .road
+{
+    position: absolute;
+    width: 100%;
+    height: calc(var(--size) * 2);
+    bottom: 0;
+    background: #0d031f;
+    overflow: hidden;
+    transform:translateZ(5px);
+    z-index:101;
+
+    animation-name: day-night-road-color;
+    animation-duration:25s;
+    animation-iteration-count:infinite;
+}
+
+@keyframes day-night-road-color
+{
+    0%  {background:#0d031f;}
+    39.5% {background:#0d031f;}
+    49% {background:#2B485A;}
+    67% {background:#6B7D93;}
+    73%{background:#2B485A;}
+    74%{background:#0d031f;}
+    100%{background:#0d031f;}
+}
+
+/*BUILDINGS*/
+
+.sunset .buildings
+{
+    position: absolute;
+    --secondsize: 100px;
+    width: 100%;
+    height: calc(var(--secondsize) * 4);
+    bottom: calc(var(--size) * 1.5);
+    left: calc(var(--secondsize) * 5);
+    transform:translateZ(4px);
+    z-index:100;
+
+    animation-name : moving-buildings;
+    animation-duration: 12.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0,-0.01, 1, 1.01);
+ }
+
+
+@keyframes moving-buildings
+{
+    0%   {transform: translateX(1000px);}
+    100% {transform: translateX(-1000px);}
+}
+
+ .sunset .buildings .big-building
+ {
+    background: #0d031f;
+    position: absolute;
+    left: calc(var(--secondsize) * -2);  
+    bottom: 0;
+    width: calc(var(--secondsize) * 2.5);
+    height:100%;
+    border-radius: 30px;
+}
+
+.big-building, .small-building
+{
+    animation-name: day-night-buildings-color;
+    animation-duration:25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes day-night-buildings-color
+{
+    0%  {background:#0d031f;}
+    39.5% {background:#0d031f;}
+    49% {background:#884607;}
+    67% {background:#F77F0D;}
+    73%{background:#884607;}
+    74%{background:#0d031f;}
+    100%{background:#0d031f;}
+}
+
+.sunset .buildings .big-building .window
+{
+    position: absolute;
+    top: calc(50% - var(--size) / 1.2 / 2) ;
+    left: calc(50% - var(--size) / 0.9);
+    width:calc(var(--size) / 1.2);
+    height:calc(var(--size) / 1.2);
+    background:#fff6d4;
+    border-radius:10%;
+}
+
+.sunset .buildings .big-building .window,
+.sunset .buildings .big-building .window::after,
+.sunset .buildings .small-building .window::after,
+.sunset .buildings .small-building .window
+{
+    animation-name: day-night-window-color;
+    animation-duration:25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes day-night-window-color
+{
+    0%  {background:#fff6d4;}
+    39.5% {background:#fff6d4;}
+    49% {background:#D9CB91;}
+    67% {background:#C7C7C7;}
+    73%{background:#D9CB91;}
+    74%{background:#D9CB91;}
+    100%{background:#fff6d4;}
+}
+
+.sunset .car-container .car .upper-part .front-window,
+.sunset .car-container .car .upper-part .back-window
+{
+    animation-name: day-night-car-window-color;
+    animation-duration:25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes day-night-car-window-color
+{
+    0%  {background:#260d55;}
+    39.5% {background:#260d55;}
+    49% {background:#D9CB91;}
+    67% {background:#C7C7C7;}
+    73%{background:#C7C7C7;}
+    74%{background:#9167A0;}
+    100%{background:#260d55;}
+}
+
+.sunset .buildings .big-building .window::after{
+   content:'';
+   position: absolute;
+   left: calc(var(--size) * 1.4);
+   width: calc(var(--size) / 1.2);
+   height: calc(var(--size) / 1.2);
+   background:#fff6d4;
+   border-radius: 10%;
+}
+
+.sunset .buildings .big-building .window-2{
+   top:50px;
+}
+
+.sunset .buildings .big-building .window-3{
+   top:280px;
+}
+
+/*small building*/
+
+
+.sunset .buildings .small-building {
+    background: #0d031f;
+    position: absolute;
+    left: calc(var(--secondsize) * 1);
+    bottom: 0;
+    width: calc(var(--secondsize) * 2);
+    height: 70%;
+    --buildingspace: 200px;
+    border-radius: 30px;
+ }
+
+ .sunset .buildings .small-building .window{
+    position: absolute;
+    top: calc(50% - var(--size) / 1.2 / 2) ;
+    left: calc(50% - var(--size) / 1.3);
+    width:calc(var(--size) / 2);
+    height:calc(var(--size) / 2);
+    background:#fff6d4;
+    border-radius:10%;
+}
+
+.sunset .buildings .small-building .window::after{
+   content:'';
+   position: absolute;
+   left: calc(var(--size));
+   width: calc(var(--size) / 2);
+   height: calc(var(--size) / 2);
+   background:#fff6d4;
+   border-radius: 10%;
+}
+
+.sunset .buildings .small-building .window-2{
+   top:40px;
+}
+
+.sunset .buildings .small-building .window-3{
+   top:185px;
+}
+
+/*Road lines*/
+
+ .road-lines-container
+ {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    transform:translateZ(6px);
+
+    animation-name : moving-road-lines;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0,-0.01, 1, 1.01);
+ }
+
+@keyframes moving-road-lines
+{
+    0%   {transform: translateX(0px) translateZ(30px);}
+    100% {transform: translateX(-140px) translateZ(30px);}
+}
+
+ .road-line
+ {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 8px;
+    width: 50px;
+    background:#ffdd59;
+    z-index:102;
+
+    animation-name: day-night-road-line-color;
+    animation-duration:25s;
+    animation-iteration-count: infinite;
+ }
+
+@keyframes day-night-road-line-color
+{
+    0%  {background:#ffdd59;}
+    39.5% {background:#ffdd59;}
+    49% {background:#FDECAB;}
+    67% {background:#FAF7EC;}
+    73%{background:#FDECAB;}
+    74%{background:#FDECAB;}
+    100%{background:#ffdd59;}
+}
+
+ .road-line-2
+ {
+     left: 150px;
+ }
+
+ .road-line-3
+ {
+     left: 300px;
+ }
+
+ .road-line-4
+ {
+     left: 450px;
+ }
+
+ .road-line-5
+ {
+     left: 600px;
+ }
+
+ .road-line-6
+ {
+     left: 750px;
+ }
+
+ .road-line-7
+ {
+     left: 900px;
+ }
+
+ .road-line-8
+ {
+     left: 1050px;
+ }
+
+ .road-line-9
+ {
+     left: 1200px;
+ }
+
+ .road-line-10
+ {
+     left: 1350px;
+ }
+
+
+ .road-line-11
+ {
+     left: 1500px;
+ }
